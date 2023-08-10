@@ -7,7 +7,9 @@ const { send } = require('process');
 const UserModels = require("./models/UserModels");
 const ProposalModel = require("./models/ProposalModel")
 const JobsModels = require("./models/JobsModels")
-
+const cors = require("cors");
+const bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
 const port = process.env.PORT 
 const privateKey = process.env.PRIVATE_JWT
 const dbURL = process.env.DB_URL 
