@@ -29,7 +29,20 @@ app.get("/test", (request, response) => {
     response.send("its Working fine")
   })
 
-
+  app.get("/users", async (request, response) => {
+    try {
+      const users = await UserModels.find();
+      return response.json({
+        status: true,
+        users: users
+      })
+    } catch (error) {
+      return response.json({
+        status: false,
+        msg: "Users not found"
+      })
+    }
+  })
 
 
 mongoose.connect(dbURL, {
