@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 app.get("/test", (request, response) => {
-    send.response("Working")
+    response.send("its Working fine")
   })
 
 
