@@ -15,7 +15,12 @@ const privateKey = process.env.PRIVATE_JWT
 const dbURL = process.env.DB_URL 
 app.use(express.json());
 
-
+app.use(
+    cors({
+      origin: "*",
+      optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+    })
+  );
 
 
 app.get("/test", (request, response) => {
