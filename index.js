@@ -14,6 +14,8 @@ const port = process.env.PORT
 const privateKey = process.env.PRIVATE_JWT
 const dbURL = process.env.DB_URL 
 app.use(express.json());
+const path = require('path');
+app.use("/uploads", express.static(path.join(path.resolve(), "uploads")));
 
 app.use(
     cors({
